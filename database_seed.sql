@@ -1,3 +1,5 @@
+SET FOREIGN_KEY_CHECKS = 0;
+
 -- Hapus semua tabel jika sudah ada (Reverse Dependency Order)
 DROP TABLE IF EXISTS notifikasi;
 DROP TABLE IF EXISTS applications;
@@ -91,7 +93,7 @@ CREATE TABLE notifikasi (
 );
 
 -- Insert Data Dummy (DML)
-INSERT INTO users (id_user, email, nama, departemen, angkatan, bio) VALUES
+INSERT IGNORE INTO users (id_user, email, nama, departemen, angkatan, bio) VALUES
 (1, 'andi.firmansyah@student.its.ac.id', 'Andi Firmansyah', 'Bisnis Digital', 2023, 'Halo, saya antusias untuk belajar hal baru.'),
 (2, 'gilang.kusuma@student.its.ac.id', 'Gilang Kusuma', 'Sistem Informasi', 2023, 'Halo, saya antusias untuk belajar hal baru.'),
 (3, 'gilang.mahendra@student.its.ac.id', 'Gilang Mahendra', 'Teknologi Informasi', 2020, 'Halo, saya antusias untuk belajar hal baru.'),
@@ -143,7 +145,7 @@ INSERT INTO users (id_user, email, nama, departemen, angkatan, bio) VALUES
 (49, 'yoga.pratama@student.its.ac.id', 'Yoga Pratama', 'Bisnis Digital', 2021, 'Halo, saya antusias untuk belajar hal baru.'),
 (50, 'gita.nugroho@student.its.ac.id', 'Gita Nugroho', 'Sistem Informasi', 2024, 'Halo, saya antusias untuk belajar hal baru.');
 
-INSERT INTO skills (id_skill, nama_skill, kategori) VALUES
+INSERT IGNORE INTO skills (id_skill, nama_skill, kategori) VALUES
 (1, 'Frontend Web', 'Programming'),
 (2, 'Backend Web', 'Programming'),
 (3, 'UI/UX Design', 'Design'),
@@ -160,7 +162,7 @@ INSERT INTO skills (id_skill, nama_skill, kategori) VALUES
 (14, 'Graphic Design', 'Design'),
 (15, 'Video Editing', 'Design');
 
-INSERT INTO portofolios (id_port, id_user, judul, link_asset) VALUES
+INSERT IGNORE INTO portofolios (id_port, id_user, judul, link_asset) VALUES
 (1, 20, 'Project Design 1', 'https://github.com/user20/project1'),
 (2, 26, 'Project Data 2', 'https://github.com/user26/project2'),
 (3, 5, 'Project Data 3', 'https://github.com/user5/project3'),
@@ -212,7 +214,7 @@ INSERT INTO portofolios (id_port, id_user, judul, link_asset) VALUES
 (49, 19, 'Project Web 49', 'https://github.com/user19/project49'),
 (50, 14, 'Project Design 50', 'https://github.com/user14/project50');
 
-INSERT INTO user_skills (id_user, id_skill) VALUES
+INSERT IGNORE INTO user_skills (id_user, id_skill) VALUES
 (48, 14),
 (26, 13),
 (27, 5),
@@ -262,7 +264,7 @@ INSERT INTO user_skills (id_user, id_skill) VALUES
 (18, 13),
 (15, 11);
 
-INSERT INTO recruitment_posts (id_post, id_user, judul, deskripsi, tgl_dibuat, tgl_tutup) VALUES
+INSERT IGNORE INTO recruitment_posts (id_post, id_user, judul, deskripsi, tgl_dibuat, tgl_tutup) VALUES
 (1, 13, 'Lomba PKM-KC - 1', 'Kami sedang mencari anggota tim yang berdedikasi untuk bergabung dalam proyek ini.', '2026-06-11 11:33:21', '2026-07-06 13:05:21'),
 (2, 19, 'Pengembangan IoT Smart Home - 2', 'Kami sedang mencari anggota tim yang berdedikasi untuk bergabung dalam proyek ini.', '2026-06-07 21:05:21', '2026-06-25 19:07:21'),
 (3, 20, 'Proyek E-Commerce - 3', 'Kami sedang mencari anggota tim yang berdedikasi untuk bergabung dalam proyek ini.', '2026-06-04 04:03:21', '2026-07-01 21:15:21'),
@@ -314,7 +316,7 @@ INSERT INTO recruitment_posts (id_post, id_user, judul, deskripsi, tgl_dibuat, t
 (49, 3, 'Pengembangan IoT Smart Home - 49', 'Kami sedang mencari anggota tim yang berdedikasi untuk bergabung dalam proyek ini.', '2026-06-11 07:51:21', '2026-06-19 15:06:21'),
 (50, 4, 'Aplikasi Kasir UMKM - 50', 'Kami sedang mencari anggota tim yang berdedikasi untuk bergabung dalam proyek ini.', '2026-06-12 17:45:21', '2026-07-03 06:13:21');
 
-INSERT INTO positions (id_pos, id_post, nama_pos, kuota, status) VALUES
+INSERT IGNORE INTO positions (id_pos, id_post, nama_pos, kuota, status) VALUES
 (1, 6, 'System Analyst', 2, 'Tutup'),
 (2, 25, 'UI/UX Designer', 1, 'Buka'),
 (3, 37, 'Project Manager', 2, 'Tutup'),
@@ -366,7 +368,7 @@ INSERT INTO positions (id_pos, id_post, nama_pos, kuota, status) VALUES
 (49, 7, 'Data Analyst', 1, 'Buka'),
 (50, 23, 'DevOps Engineer', 1, 'Buka');
 
-INSERT INTO position_skills (id_pos, id_skill) VALUES
+INSERT IGNORE INTO position_skills (id_pos, id_skill) VALUES
 (34, 14),
 (15, 15),
 (33, 3),
@@ -417,7 +419,7 @@ INSERT INTO position_skills (id_pos, id_skill) VALUES
 (15, 4),
 (29, 13);
 
-INSERT INTO applications (id_app, id_user, id_pos, tgl_daftar, status) VALUES
+INSERT IGNORE INTO applications (id_app, id_user, id_pos, tgl_daftar, status) VALUES
 (1, 21, 1, '2026-06-09 17:13:21', 'Ditolak'),
 (2, 28, 37, '2026-06-04 07:42:21', 'Diterima'),
 (3, 19, 34, '2026-05-26 16:02:21', 'Ditolak'),
@@ -469,7 +471,7 @@ INSERT INTO applications (id_app, id_user, id_pos, tgl_daftar, status) VALUES
 (49, 35, 4, '2026-05-29 18:01:21', 'Ditolak'),
 (50, 28, 35, '2026-05-15 20:15:21', 'Diterima');
 
-INSERT INTO notifikasi (id_notif, id_user, judul, pesan, kategori, id_terkait, status_baca, tgl_dibuat) VALUES
+INSERT IGNORE INTO notifikasi (id_notif, id_user, judul, pesan, kategori, id_terkait, status_baca, tgl_dibuat) VALUES
 (1, 17, 'Status Lamaran', 'Status lamaranmu telah diperbarui.', 'lamaran', 38, FALSE, '2026-05-18 14:29:21'),
 (2, 4, 'Pemberitahuan Sistem', 'Postingan rekrutmenmu akan segera ditutup.', 'sistem', 47, TRUE, '2026-05-16 03:05:21'),
 (3, 38, 'Pemberitahuan Sistem', 'Postingan rekrutmenmu akan segera ditutup.', 'sistem', 13, FALSE, '2026-05-16 04:55:21'),

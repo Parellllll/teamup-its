@@ -1,7 +1,7 @@
 @echo off
 color 0B
 echo ========================================================
-echo        MEMULAI APLIKASI TEAMUP UNTUK PRESENTASI
+echo        MEMULAI APLIKASI TEAMUP (LOCALHOST LOKAL)
 echo ========================================================
 echo.
 echo Membuka server Database, Backend, dan Frontend...
@@ -16,14 +16,14 @@ start "TeamUp Frontend (Next.js)" cmd /k "echo Menjalankan Frontend (Port 3000).
 echo Server sedang dimuat di latar belakang... (Tunggu sekitar 10 detik)
 echo.
 echo ========================================================
-echo                 CARA AKSES UNTUK DOSEN
+echo                 CARA AKSES LOKAL
 echo ========================================================
-echo 1. Pastikan HP/Laptop Dosen terhubung ke Wi-Fi yang SAMA 
-echo    dengan laptopmu (Sangat penting!).
+echo 1. Pastikan XAMPP (MySQL) sudah menyala.
+echo 2. Buka Google Chrome atau browser apapun di laptop ini.
+echo 3. Ketikkan alamat berikut di bagian atas browser:
 echo.
-echo 2. Suruh dosen buka browser di HP-nya, lalu ketik alamat ini:
-echo    http://192.168.100.3:3000
+echo    http://localhost:3000
 echo.
-echo Selesai! Web akan langsung terbuka di HP dosen.
+echo Selesai! Aplikasi TeamUp akan terbuka dengan data lokalmu.
 echo ========================================================
 pause

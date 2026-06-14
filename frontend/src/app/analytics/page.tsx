@@ -15,7 +15,7 @@ export default function Analytics() {
     const fetchAnalytics = async () => {
       try {
         const res = await api.get('/analytics/me');
-        setAnalytics(res.data.analytics);
+        setAnalytics(res.data.analytics || []);
       } catch (err: any) {
         if (err.response?.status === 401) router.push('/login');
       } finally {
