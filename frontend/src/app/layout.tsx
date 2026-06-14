@@ -15,12 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} antialiased gradient-bg text-white selection:bg-indigo-500 selection:text-white`}>
-        <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-          <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-indigo-500/30 rounded-full blur-[128px] animate-float"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-purple-500/20 rounded-full blur-[128px] animate-float" style={{ animationDelay: '3s' }}></div>
-        </div>
+    <html lang="en">
+      <body className={`${inter.variable} antialiased bg-slate-50 text-slate-800 selection:bg-blue-500 selection:text-white`}>
         {children}
       </body>
     </html>
